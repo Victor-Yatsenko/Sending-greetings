@@ -2,9 +2,10 @@ import os
 from  pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
-env_path = Path(__file__).parent.parent / '.env'
+
 
 # Перевірка наявності файлу .env
+env_path = Path(__file__).parent.parent / '.env'
 if not env_path.exists():
     raise ImportError(
         f".env файл не знайдено за шляхом: {env_path}\n"
