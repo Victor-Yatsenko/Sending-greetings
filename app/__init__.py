@@ -13,10 +13,10 @@ if not env_path.exists():
 
 # Перевірка обов'язкових змінних
 REQUIRED_SETTINGS = ['ZUP_URL']
-missint_settings = [s for s in REQUIRED_SETTINGS if not os.getenv(s)]
+missing_settings = [s for s in REQUIRED_SETTINGS if not os.getenv(s)]
 
-if missint_settings:
+if missing_settings:
     raise RuntimeError(
-        f"\nВідсутні обов'язкові змінні оточення: {', '.join(missint_settings)}\n"
+        f"\nВідсутні обов'язкові змінні оточення: {', '.join(missing_settings)}\n"
         "Перевірте ваш .env файл!"
     )
