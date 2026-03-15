@@ -19,6 +19,8 @@ SCOPES = [
     'offline_access'  # Додаємо offline_access для того, щоб токен міг оновлюватися сам
 ]
 
+#Email
+SEND_AS = os.getenv('SEND_AS')
 
 # 1C
 date = datetime.date.today().strftime('%d-%m-%Y')

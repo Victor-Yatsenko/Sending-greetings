@@ -61,7 +61,7 @@ def send_email():
     message.subject = f'Привітання з Днем народження від команди ЦУМ'
     message.body = html_content
     message.content_subtype = 'html'
-    message.sender.address = 'team@tsum.com.ua'  # Щоб листи відправлялись від імені team@tsum.com.ua
+    message.sender.address = config.SEND_AS  # Щоб листи відправлялись від імені службової пошти
     message.send()
 
     print("Привітання надіслано")
