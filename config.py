@@ -10,17 +10,16 @@ SECRET_VALUE = os.getenv('SECRET_VALUE')
 
 # Список прав (Scopes) для O365
 SCOPES = [
-    'User.Read',
-    'User.Read.All',
-    'Mail.ReadWrite',
-    'Mail.Send',
-    'Chat.Create',
-    'Chat.ReadWrite',
-    'offline_access'  # Додаємо offline_access для того, щоб токен міг оновлюватися сам
+    'https://graph.microsoft.com/Mail.Send',
+    'https://graph.microsoft.com/Chat.ReadWrite',
+    'https://graph.microsoft.com/Chat.Create',
+    'https://graph.microsoft.com/User.Read',
+    'offline_access'  # щоб токен міг оновлюватися сам
 ]
 
 #Email
 SEND_AS = os.getenv('SEND_AS')
+TARGET_USER = os.getenv('TARGET_USER')
 
 # 1C
 date = datetime.date.today().strftime('%d-%m-%Y')
