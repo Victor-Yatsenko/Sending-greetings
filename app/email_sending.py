@@ -6,7 +6,7 @@ credentials = (config.CLIENT_ID, config.SECRET_VALUE)
 account = Account(credentials, tenant_id=config.TENANT_ID)
 
 
-def send_email():
+def send_email(target_user: str):
     if not account.is_authenticated:
         print("Авторизація через браузер")
         account.authenticate(scopes=config.SCOPES)
@@ -58,7 +58,7 @@ def send_email():
         """
 
     # Send message
-    message.to.add('Viktor.Yatsenko@tsum.com.ua')
+    message.to.add(target_user)
     message.subject = f'Привітання з Днем народження від команди ЦУМ'
     message.body = html_content
     message.content_subtype = 'html'

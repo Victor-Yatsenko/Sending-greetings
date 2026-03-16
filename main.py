@@ -6,6 +6,6 @@ if __name__ == '__main__':
     # server_request.print_start()
 
     # Відправка повідомлень
-    email_sending.send_email()
     target_user = config.TARGET_USER
+    email_sending.send_email(target_user)
     email_sending.send_teams_message(target_user)
